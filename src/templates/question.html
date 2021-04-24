@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+
+    <div class="bg-light p-5 rounded">
+        <h1>Escribe tus preguntas para la comunidad</h1>
+        <p class="lead">Coloca el título de tu pregunta y luego describela con mayor detalle</p>
+
+        <form method="POST" action="pushQuestion">
+            <input class="form-control mb-2" type="text" name="qn_title" id="" placeholder="Título de tu pregunta" required>
+            <input class="form-control mb-2" type="text" name="qn_detail" id="" placeholder="Detalle de tu pregunta" required>
+            <button class="btn btn-lg btn-primary" type="submit" style="margin-top: 10px;">Publicar pregunta &raquo;</button>
+        </form>
+        
+    </div>
+</main>
+
+    {% block jScript %}
+    <!--
+        BLOQUE PARA COLOCAR ARCHIVOS JS
+    -->
+    {% endblock %}
+
+{% endblock %}

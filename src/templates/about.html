@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="px-4 py-5 my-5 text-center">
+        <!--<img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+        <img class="mb-4" src="{{ url_for('static',filename='img/information.svg')}}" alt="" width="80" height="65">
+        <h1 class="display-5 fw-bold">Sobre MyOwnStack</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Se trata de un sitio web de prueba en el que podrás realizar preguntas y dar respuestas sobre diversos tópicos. 
+                Puedes consultar libremente las preguntas ya realizadas, sin embargo, para poder publicar tus preguntas o respuestas deberás crear 
+                una cuenta y estar autenticado.
+            </p>
+
+            <p class="lead mb-4">¿Qué estás esperando para nevegar por el sitio?</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <!--
+                <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Registrarme</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Probar el sitio</button>
+                -->
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/register" role="button">Registrarme</a>
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/" role="button">Probar el sitio</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+    {% block jScript %}
+    <!--
+        BLOQUE PARA COLOCAR ARCHIVOS JS
+    -->
+    {% endblock %}
+
+{% endblock %}

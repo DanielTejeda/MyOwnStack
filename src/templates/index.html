@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Page Content -->
+<main class="container" id="container_main">
+    <div><p><br></p></div>
+    <a class="btn btn-lg btn-primary mt-2" href="/question" role="button">Hacer una pregunta &raquo;</a>
+    <div><p><br></p></div>
+    <!--
+    {% for qn in questions %}
+    <div class="mb-4 bg-light p-5 rounded">
+        <h1>{{ qn.qn_title }}</h1>
+        <p class="lead"> {{ qn.qn_detail }}</p>
+
+        <h3>Respuestas</h3>
+        <ul>
+            {% for ans in answers %}
+                {% if ans.id_qn == qn.id %}
+                <li class="lead"> {{ans.ans_detail}}</li>
+                {% endif %}          
+            {% endfor %}
+        </ul>
+        <a class="btn btn-lg btn-primary" href="/answer/{{qn.id}}" role="button">Responder &raquo;</a>
+    </div>
+    {% endfor %}
+    -->
+    
+</main>
+
+
+    <!--<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>-->
+
+    {% block jScript %}
+    <!--
+        BLOQUE PARA COLOCAR ARCHIVOS JS
+    -->
+    {% endblock %}
+
+{% endblock %}

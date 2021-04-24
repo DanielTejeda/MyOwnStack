@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Page Content -->
+<main class="container" id="container_main2">
+    <div><p><br></p></div>
+    <a class="btn btn-lg btn-primary mt-2" href="/question" role="button">Hacer una pregunta &raquo;</a>
+    <div><p><br></p></div>
+    <!--
+    <div class="mb-4 bg-light p-5 rounded">
+        <h3>Usuarios Registrados</h3>
+
+        <ul>
+            {% for user in users %}
+            <li class="lead"> {{user.name}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    -->
+    {% if questions_q %}
+        {% for qn in questions_q %}
+        <div class="mb-4 bg-light p-5 rounded">
+            <h1>{{ qn.qn_title }}</h1>
+            <p class="lead"> {{ qn.qn_detail }}</p>
+
+            <h3>Respuestas</h3>
+            <ul>
+                {% for ans in answers %}
+                    {% if ans.id_qn == qn.id %}
+                        <li class="lead"> {{ans.ans_detail}}</li>
+                        {% if ans.correct == 1 %}
+                            <button class="w-10 mb-2 btn btn-md btn-success">Correcto</button>
+                        {% else %}
+                            <form method="post" action="/checkAnswer/{{ans.id}}">
+                                <button class="w-10 mb-2 btn btn-md btn-outline-secondary" type="submit">Necesita calificación</button>
+                            </form>
+                        {% endif%}
+                    {% endif %}          
+                {% endfor %}
+            </ul>
+            <a class="btn btn-lg btn-primary" href="/answer/{{qn.id}}" role="button">Responder</a> <!--&raquo;-->
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="mb-4 bg-light p-5 rounded"> 
+            <h1>No se encontraros resutados</h1>
+        </div>
+    {% endif %}
+    
+</main>
+
+
+    <!--<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>-->
+
+    {% block jScript %}
+    <!--
+        BLOQUE PARA COLOCAR ARCHIVOS JS
+    -->
+    {% endblock %}
+
+{% endblock %}
